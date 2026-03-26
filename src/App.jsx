@@ -1,136 +1,138 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import Start from './Start';
+import About_Me from './About_Me';
+import Education from './Education';
+import Certificate from './Certificate';
+import Additional_Activities from './Additional_Activities';
+import Contact from './Contact';
 
 const translations = {
   el: {
     start: "Αρχική",
-    about: "Σχετικά",
+    about: "Σχετικά με μένα",
     education: "Εκπαίδευση",
     certificates: "Πιστοποιητικά",
-    hobbies: "Ενδιαφέροντα & Δραστηριότητες",
+    activities: "Επιπρόσθετες Ενασχολήσεις",
     contact: "Επικοινωνία",
-    welcome: "Γεια σας! Είμαι η Άννα και αυτό είναι το πρώτο μου React Portfolio.",
-    hobbiesText: "Μου αρέσει ο προγραμματισμός, ο σχεδιασμός και τα ταξίδια.",
-    contactText: "Μπορείτε να με βρείτε στο LinkedIn ή μέσω email.",
+    contactText: "Μπορείτε να με βρείτε εδώ:",
+    welcome: "Καλώς ήρθατε στο βιογραφικό μου!",
   },
   en: {
     start: "Home",
-    about: "About",
+    about: "About Me",
     education: "Education",
     certificates: "Certificates",
-    hobbies: "Interests & Activities",
+    activities: "Additional Activities",
+    welcome: "Welcome to my CV!",
     contact: "Contact",
-    welcome: "Hello! I am Anna and this is my first React Portfolio.",
-    hobbiesText: "I love programming, design, and traveling.",
-    contactText: "You can find me on LinkedIn or via email.",
+    contactText: "You can find me here:",
   }
 };
 
 function App() {
-
   const [language, setLanguage] = useState('el');
-
-  const toggleLanguage = () => {
-    setLanguage(language === 'el' ? 'en' : 'el');
-  };
+  const [activeTab, setActiveTab] = useState('start');
+  const [theme, setTheme] = useState('light');
 
   const t = translations[language];
 
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    document.documentElement.setAttribute('data-theme', newTheme);
+  };
+
   return (
-    <div style={{ scrollBehavior: 'smooth' }}>
-      {/* --- MENU --- */}
+    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+      
+      {/* --- NAVIGATION BAR --- */}
       <nav style={navStyle}>
-        <a href="#start" style={linkStyle}>{t.start}</a>
-        <a href="#about" style={linkStyle}>{t.about}</a>
-        <a href="#education" style={linkStyle}>{t.education}</a>
-        <a href="#certificates" style={linkStyle}>{t.certificates}</a>
-        <a href="#activities" style={linkStyle}>{t.hobbies}</a>
-        <a href="#contact" style={linkStyle}>{t.contact}</a>
-        
-        <button onClick={toggleLanguage} style={btnStyle}>
-          {language === 'el' ? 'English 🇬🇧' : 'Ελληνικά 🇬🇷'}
-        </button>
+        <button onClick={() => setActiveTab('start')} style={activeTab === 'start' ? activeBtn : linkBtn}>{t.start}</button>
+        <button onClick={() => setActiveTab('about')} style={activeTab === 'about' ? activeBtn : linkBtn}>{t.about}</button>
+        <button onClick={() => setActiveTab('education')} style={activeTab === 'education' ? activeBtn : linkBtn}>{t.education}</button>
+        <button onClick={() => setActiveTab('certificates')} style={activeTab === 'certificates' ? activeBtn : linkBtn}>{t.certificates}</button>
+        <button onClick={() => setActiveTab('activities')} style={activeTab === 'activities' ? activeBtn : linkBtn}>{t.activities}</button>
+        <button onClick={() => setActiveTab('contact')} style={activeTab === 'contact' ? activeBtn : linkBtn}>{t.contact}</button>
+
+        <div style={controlsContainer}>
+          <button onClick={() => setLanguage(language === 'el' ? 'en' : 'el')} style={langBtn}>
+            {language === 'el' ? 'EN' : 'EL'}
+          </button>
+          <button onClick={toggleTheme} style={themeBtnStyle}>
+            {theme === 'light' ? '🌙' : '☀️'}
+          </button>
+        </div>
       </nav>
-      {/* --- SECTION: START --- */}
-      <section id="start" style={sectionStyle}>
-        <h1>{t.start}</h1>
-        <p>{t.welcome}</p>
-      </section>
 
-      {/* --- SECTION: ABOUT --- */}
-      <section id="about" style={sectionStyle}>
-        <h1>{t.about}</h1>
-        <p>{t.welcome}</p>
-      </section>
+      {/* --- MAIN CONTENT AREA --- */}
+      <main style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '60px' }}>
+        {activeTab === 'start' && <Start title={t.start} text={t.welcome} />}
+        {activeTab === 'about' && <About_Me title={t.about} text={t.welcome} />}
+        {activeTab === 'education' && <Education title={t.education} text={t.education} />}
+        {activeTab === 'certificates' && <Certificate title={t.certificates} text={t.certificates} />}
+        {activeTab === 'activities' && <Additional_Activities title={t.activities} text={t.activities} />}
+        {activeTab === 'contact' && <Contact title={t.contact} text={t.contactText} />}
+      </main>
 
-      {/* --- SECTION: EDUCATION --- */}
-      <section id="education" style={sectionStyle}>
-        <h1>{t.education}</h1>
-        <p>{t.educationText}</p>
-      </section>
-
-      {/* --- SECTION: CERTIFICATES --- */}
-      <section id="certificates" style={sectionStyle}>
-        <h1>{t.certificates}</h1>
-        <p>{t.certificatesText}</p>
-      </section>
-
-      {/* --- SECTION: ACTIVITIES --- */}
-      <section id="activities" style={sectionStyle}>
-        <h1>{t.hobbies}</h1>
-        <p>{t.hobbiesText}</p>
-      </section>
-
-      {/* --- SECTION: CONTACT --- */}
-      <section id="contact" style={sectionStyle}>
-        <h1>{t.contact}</h1>
-        <p>{t.contactText}</p>
-      </section>
     </div>
   );
 }
 
-// --- STYLES (CSS-in-JS) ---
+// --- STYLES ---
+
 const navStyle = {
-  position: 'fixed',
-  top: 0,
-  left: 0,
-  width: '100%',
-  background: '#222',
-  color: 'white',
-  padding: '15px 20px',
   display: 'flex',
+  flexWrap: 'wrap',
+  justifyContent: 'flex-start',
   alignItems: 'center',
-  gap: '20px',
-  zIndex: 1000
+  gap: '15px',
+  padding: '15px 30px',
+  background: 'var(--nav-bg, #222)',
+  position: 'fixed',
+  width: '100%',
+  top: 0,
+  zIndex: 1000,
+  boxSizing: 'border-box'
 };
 
-const linkStyle = {
-  color: 'white',
-  textDecoration: 'none',
-  fontWeight: 'bold'
-};
-
-const btnStyle = {
-  marginLeft: 'auto',
-  marginRight: '40px',
+const linkBtn = {
+  background: 'none',
+  border: 'none',
+  color: 'var(--text-color, white)',
   cursor: 'pointer',
-  padding: '8px 15px',
-  borderRadius: '20px',
-  border: '1px solid white',
-  background: 'transparent',
-  color: 'white',
-  fontWeight: 'bold'
+  fontWeight: 'bold',
+  padding: '10px 5px',
+  fontSize: '14px',
+  textDecoration: 'none',
+  borderBottom: '2px solid transparent'
 };
 
-const sectionStyle = {
-  padding: '120px 40px',
-  minHeight: '100vh',
-  borderBottom: '1px solid #eee',
+const activeBtn = {
+  ...linkBtn,
+  color: 'var(--accent-color, cyan)',
+  borderBottom: '2px solid var(--accent-color, cyan)'
+};
+
+const controlsContainer = {
+  marginLeft: 'auto',
   display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  fontFamily: 'Arial, sans-serif'
+  gap: '10px',
+  alignItems: 'center'
+};
+
+const langBtn = {
+  cursor: 'pointer',
+  background: 'var(--nav-bg)',
+  color: 'var(--text-color)',
+  border: '1px solid var(--text-color)',
+  padding: '5px 10px',
+  borderRadius: '5px'
+};
+
+const themeBtnStyle = {
+  ...langBtn,
+  fontSize: '1.2rem',
+  border: 'none'
 };
 
 export default App;
-
