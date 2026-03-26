@@ -14,8 +14,12 @@ const translations = {
     certificates: "Πιστοποιητικά",
     activities: "Επιπρόσθετες Ενασχολήσεις",
     contact: "Επικοινωνία",
-    contactText: "Μπορείτε να με βρείτε εδώ:",
+    name:"Άννα Καργαλίδου",
+    startText: "Προπτυχιακή φοιτήτρια Μηχανικών Πληροφορικής και Ηλεκτρονικών Συστημάτων",
     welcome: "Καλώς ήρθατε στο βιογραφικό μου!",
+    aboutMeText: "Είμαι φοιτήτρια στο Τμήμα Μηχανικών Πληροφορικής και Ηλεκτρονικών Συστημάτων του Διεθνές Πανεπιστημίου Ελλάδος στη Θεσσαλονίκη, με κατεύθυνση στον Προγραμματισμό και ισχυρή θεωρητική βάση σε Ηλεκτρονικά Συστήματα και Αλγορίθμους. Διαθέτω αποδεδειγμένη εργασιακή ηθική και δεξιότητες εξυπηρέτησης από προηγούμενη απασχόληση, με έμφαση στην ομαδική εργασία και τη γρήγορη προσαρμογή σε νέα περιβάλλοντα. Εστιάζω στην ανάπτυξη λογισμικού και την επίλυση προβλημάτων, με στόχο τη συμβολή σε καινοτόμα έργα που βελτιώνουν την καθημερινή ζωή. Αναζητώ ευκαιρίες για να εφαρμόσω τις γνώσεις μου και να αναπτυχθώ επαγγελματικά στον τομέα της τεχνολογίας.",
+    contactText: "Μπορείτε να με βρείτε εδώ:",
+    
   },
   en: {
     start: "Home",
@@ -23,8 +27,11 @@ const translations = {
     education: "Education",
     certificates: "Certificates",
     activities: "Additional Activities",
-    welcome: "Welcome to my CV!",
     contact: "Contact",
+    name: "Anna Kargalidou",
+    startText: "Undergraduate student in Department of Information and Electronic Engineering",    
+    welcome: "Welcome to my CV!",
+    aboutMeText: "I am an undergraduate student in the Department of Information and Electronic Engineering at the International Hellenic University in Thessaloniki, specializing in Programming, with a strong theoretical background in Electronic Systems and Algorithms. I possess a proven work ethic and customer service skills gained through previous employment, with an emphasis on teamwork and adaptability. I focus on software development and problem-solving, aiming to contribute to innovative projects that improve everyday life. I am seeking opportunities to apply my knowledge and grow professionally in the technology sector.",
     contactText: "You can find me here:",
   }
 };
@@ -32,7 +39,7 @@ const translations = {
 function App() {
   const [language, setLanguage] = useState('el');
   const [activeTab, setActiveTab] = useState('start');
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark'); 
 
   const t = translations[language];
 
@@ -65,9 +72,21 @@ function App() {
       </nav>
 
       {/* --- MAIN CONTENT AREA --- */}
-      <main style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '60px' }}>
-        {activeTab === 'start' && <Start title={t.start} text={t.welcome} />}
-        {activeTab === 'about' && <About_Me title={t.about} text={t.welcome} />}
+      <main style={{ 
+  flex: 1,
+  height: 'calc(100vh - 72px)',
+  display: 'flex', 
+  flexDirection: 'column', 
+  justifyContent: 'flex-start', 
+  alignItems: 'center', 
+  marginTop: '72px',
+  paddingTop: '0.5vh',
+  transform: 'translateY(-18px)', 
+  overflow: 'hidden',
+  background: 'transparent'
+}}>
+        {activeTab === 'start' && <Start title={t.name} text={t.welcome} startText={t.startText} />}
+        {activeTab === 'about' && <About_Me title={t.about} text={t.aboutMeText} />}
         {activeTab === 'education' && <Education title={t.education} text={t.education} />}
         {activeTab === 'certificates' && <Certificate title={t.certificates} text={t.certificates} />}
         {activeTab === 'activities' && <Additional_Activities title={t.activities} text={t.activities} />}
@@ -102,7 +121,7 @@ const linkBtn = {
   cursor: 'pointer',
   fontWeight: 'bold',
   padding: '10px 5px',
-  fontSize: '14px',
+  fontSize: '18px',
   textDecoration: 'none',
   borderBottom: '2px solid transparent'
 };
@@ -125,7 +144,8 @@ const langBtn = {
   background: 'var(--nav-bg)',
   color: 'var(--text-color)',
   border: '1px solid var(--text-color)',
-  padding: '5px 10px',
+  padding: '7px 12px',
+  fontSize: '16px',
   borderRadius: '5px'
 };
 

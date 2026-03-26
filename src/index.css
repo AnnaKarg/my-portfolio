@@ -1,22 +1,30 @@
 :root {
-  /* Light Mode Colors */
-  --bg-color: #ffffff;
+  /* Light Mode */
+  --bg-color: #f8f9fa; /* Ένα πολύ απαλό γκρι αντί για "χτυπητό" λευκό */
+  --bg-gradient: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
   --text-color: #222222;
-  --nav-bg: #f4f4f4;
+  --nav-bg: rgba(244, 244, 244, 0.95);
   --accent-color: #00d1b2;
 }
 
 [data-theme='dark'] {
-  /* Dark Mode Colors */
+  /* Dark Mode */
   --bg-color: #121212;
-  --text-color: #ffffff;
-  --nav-bg: #1e1e1e;
+  /* Αντί για κύκλο, βάζουμε μια πολύ απαλή κλίση από πάνω προς τα κάτω */
+  --bg-gradient: linear-gradient(180deg, #1a1c20 0%, #121212 100%);
+  --text-color: #eeeeee;
+  --nav-bg: rgba(30, 30, 30, 0.95);
   --accent-color: #00ffcc;
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: all 0.3s ease; /* Για απαλή αλλαγή χρωμάτων */
   margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-color);
+  /* Η μετάβαση τώρα θα είναι ομοιόμορφη σε όλη την επιφάνεια */
+  transition: background 0.4s ease-in-out, background-color 0.4s ease-in-out, color 0.4s ease-in-out;
 }

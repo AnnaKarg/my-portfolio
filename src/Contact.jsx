@@ -18,6 +18,8 @@ function Contact({ title, text }) {
 const containerStyle = { 
   textAlign: 'center', 
   padding: '20px',
+  fontSize: '1.25rem',
+  lineHeight: '1.6',
   color: 'var(--text-color)', 
   backgroundColor: 'var(--bg-color)' 
 };
@@ -33,7 +35,7 @@ const linkStyle = {
   textDecoration: 'none',
   color: '#00d1b2',
   fontWeight: 'bold',
-  fontSize: '18px',
+  fontSize: '20px',
   border: '1px solid #00d1b2',
   padding: '10px 20px',
   borderRadius: '8px'

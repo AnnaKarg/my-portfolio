@@ -12,6 +12,8 @@ function Certificate({ title, text }) {
 const containerStyle = { 
   textAlign: 'center', 
   padding: '20px',
+  fontSize: '1.25rem',
+  lineHeight: '1.6',
   color: 'var(--text-color)', 
   backgroundColor: 'var(--bg-color)' 
 };
