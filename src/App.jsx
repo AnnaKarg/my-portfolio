@@ -72,18 +72,16 @@ function App() {
       </nav>
 
       {/* --- MAIN CONTENT AREA --- */}
-      <main style={{ 
+ <main style={{ 
   flex: 1,
-  height: 'calc(100vh - 72px)',
   display: 'flex', 
   flexDirection: 'column', 
-  justifyContent: 'flex-start', 
+  justifyContent: 'center', 
   alignItems: 'center', 
-  marginTop: '72px',
-  paddingTop: '0.5vh',
-  transform: 'translateY(-18px)', 
-  overflow: 'hidden',
-  background: 'transparent'
+  width: '100%',
+  padding: '20px',
+  boxSizing: 'border-box',
+  overflowY: 'auto' 
 }}>
         {activeTab === 'start' && <Start title={t.name} text={t.welcome} startText={t.startText} />}
         {activeTab === 'about' && <About_Me title={t.about} text={t.aboutMeText} />}
@@ -101,52 +99,52 @@ function App() {
 
 const navStyle = {
   display: 'flex',
-  flexWrap: 'wrap',
-  justifyContent: 'flex-start',
+  flexWrap: 'wrap', 
+  justifyContent: 'center', 
   alignItems: 'center',
-  gap: '15px',
-  padding: '15px 30px',
+  padding: 'clamp(10px, 3vh, 20px) 10px', 
   background: 'var(--nav-bg, #222)',
-  position: 'fixed',
+  position: 'relative', 
   width: '100%',
-  top: 0,
   zIndex: 1000,
   boxSizing: 'border-box'
 };
 
-const linkBtn = {
-  background: 'none',
-  border: 'none',
+const linkBtn = { 
+  background: 'none', 
+  border: 'none', 
   color: 'var(--text-color, white)',
-  cursor: 'pointer',
+  cursor: 'pointer', 
   fontWeight: 'bold',
-  padding: '10px 5px',
-  fontSize: '18px',
+  padding: 'clamp(5px, 2vh, 10px) clamp(5px, 1vw, 15px)', 
+  fontSize: 'clamp(12px, 2.5vw, 15px)', 
   textDecoration: 'none',
-  borderBottom: '2px solid transparent'
+  borderBottom: '2px solid transparent',
+  transition: 'all 0.3s ease'
 };
 
-const activeBtn = {
-  ...linkBtn,
-  color: 'var(--accent-color, cyan)',
-  borderBottom: '2px solid var(--accent-color, cyan)'
+const activeBtn = { 
+  ...linkBtn, 
+  color: 'var(--accent-color, cyan)', 
+  borderBottom: '2px solid var(--accent-color, cyan)' 
 };
 
 const controlsContainer = {
   marginLeft: 'auto',
   display: 'flex',
   gap: '10px',
-  alignItems: 'center'
+  alignItems: 'center',
+  padding: '0 10px'
 };
 
 const langBtn = {
   cursor: 'pointer',
-  background: 'var(--nav-bg)',
+  background: 'transparent',
   color: 'var(--text-color)',
   border: '1px solid var(--text-color)',
-  padding: '7px 12px',
-  fontSize: '16px',
-  borderRadius: '5px'
+  padding: '5px 10px',
+  borderRadius: '5px',
+  fontWeight: 'bold'
 };
 
 const themeBtnStyle = {
@@ -154,5 +152,19 @@ const themeBtnStyle = {
   fontSize: '1.2rem',
   border: 'none'
 };
+
+const mediaStyles = `
+  @media (min-width: 769px) {
+    nav {
+      position: fixed !important;
+      justify-content: flex-start !important;
+      padding: 15px 30px !important;
+    }
+  }
+`;
+
+const styleTag = document.createElement('style');
+styleTag.innerHTML = mediaStyles;
+document.head.appendChild(styleTag);
 
 export default App;

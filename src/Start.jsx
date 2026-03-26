@@ -15,50 +15,51 @@ function Start({ title, text, startText }) {
   );
 }
 
+// --- STYLES  ---
 const heroStyle = {
   textAlign: 'center', 
-  padding: '24px 20px 40px',
+  padding: 'clamp(20px, 5vh, 40px) 15px', 
   width: '100%',
   maxWidth: '900px', 
   color: 'var(--text-color)', 
-  transform: 'translateY(-14px)',
   animation: 'fadeIn 1.2s ease-out'
 };
 
 const titleStyle = {
-  fontSize: 'clamp(2.5rem, 8vw, 5rem)', 
+
+  fontSize: 'clamp(2rem, 7vw, 4rem)', 
   fontWeight: '800',
   letterSpacing: '-1px',
-  marginBottom: '20px'
+  marginBottom: '15px'
 };
 
 const detailStyle = {
-  fontSize: 'clamp(1.1rem, 2vw, 1.8rem)',
+  fontSize: 'clamp(1rem, 2.5vw, 1.5rem)', 
   color: 'var(--accent-color)',
   fontWeight: '500',
-  marginBottom: '15px',
+  marginBottom: '10px',
   lineHeight: '1.3'
 };
 
 const subtitleStyle = {
-  fontSize: 'clamp(1rem, 1.5vw, 1.3rem)',
+  fontSize: 'clamp(0.9rem, 2vw, 1.2rem)',
   opacity: 0.7,
-  maxWidth: '700px',
-  margin: '0 auto 40px',
+  maxWidth: '600px',
+  margin: '0 auto 30px',
   lineHeight: '1.6'
 };
 
 const avatarPlaceholder = {
-  width: 'clamp(135px, 17vw, 220px)', 
-  height: 'clamp(135px, 17vw, 220px)',
+  width: 'clamp(120px, 25vw, 200px)', 
+  height: 'clamp(120px, 25vw, 200px)',
   borderRadius: '50%',
   background: 'var(--nav-bg)',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   margin: '0 auto',
-  border: '6px solid var(--accent-color)',
-  boxShadow: '0 20px 40px rgba(0,0,0,0.3)' 
+  border: '5px solid var(--accent-color)',
+  boxShadow: '0 10px 20px rgba(0,0,0,0.2)'
 };
 
 export default Start;

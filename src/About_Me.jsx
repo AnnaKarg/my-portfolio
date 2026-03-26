@@ -13,7 +13,7 @@ const heroStyle = {
   textAlign: 'center',
   width: '100%',
   boxSizing: 'border-box',
-  padding: '38px 20px 20px',
+  padding: '24px 20px 20px',
   color: 'var(--text-color)',
   backgroundColor: 'transparent',
   animation: 'fadeIn 1s ease-in'
