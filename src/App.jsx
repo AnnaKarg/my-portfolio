@@ -4,6 +4,7 @@ import About_Me from './About_Me';
 import Education from './Education';
 import Certificate from './Certificate';
 import Additional_Activities from './Additional_Activities';
+import Portfolio from './Portfolio';
 import Contact from './Contact';
 
 const translations = {
@@ -13,6 +14,7 @@ const translations = {
     education: "Εκπαίδευση",
     certificates: "Πιστοποιητικά",
     activities: "Επιπρόσθετες Ενασχολήσεις",
+    portfolio: "Πορτφόλιο",
     contact: "Επικοινωνία",
     name:"Άννα Καργαλίδου",
     startText: "Προπτυχιακή φοιτήτρια Μηχανικών Πληροφορικής και Ηλεκτρονικών Συστημάτων",
@@ -36,6 +38,7 @@ const translations = {
     activitiesText6:"3 χρόνια",
     activitiesText7:"· Αποτέλεση καθηκόντων ομαδάρχισας στην κατασκήνωση Tzioni Summer Camp",
     activitiesText8:"1 κατασκηνοτική περίοδο",
+    portfolioText: "Υπό κατασκευή",
     contactText: "Μπορείτε να με βρείτε εδώ:",
     
   },
@@ -45,6 +48,7 @@ const translations = {
     education: "Education",
     certificates: "Certificates",
     activities: "Additional Activities",
+    portfolio: "Portfolio",
     contact: "Contact",
     name: "Anna Kargalidou",
     startText: "Undergraduate student in Department of Information and Electronic Engineering",    
@@ -68,6 +72,7 @@ const translations = {
     activitiesText6: "3 years",
     activitiesText7: "· Team leader duties at Tzioni Summer Camp",
     activitiesText8: "1 camp period",
+    portfolioText: "Under construction",
     contactText: "You can find me here:",
   }
 };
@@ -95,6 +100,7 @@ function App() {
         <button onClick={() => setActiveTab('education')} style={activeTab === 'education' ? activeBtn : linkBtn}>{t.education}</button>
         <button onClick={() => setActiveTab('certificates')} style={activeTab === 'certificates' ? activeBtn : linkBtn}>{t.certificates}</button>
         <button onClick={() => setActiveTab('activities')} style={activeTab === 'activities' ? activeBtn : linkBtn}>{t.activities}</button>
+        <button onClick={() => setActiveTab('portfolio')} style={activeTab === 'portfolio' ? activeBtn : linkBtn}>{t.portfolio}</button>
         <button onClick={() => setActiveTab('contact')} style={activeTab === 'contact' ? activeBtn : linkBtn}>{t.contact}</button>
 
         <div style={controlsContainer}>
@@ -153,6 +159,7 @@ function App() {
             activitiesText8={t.activitiesText8}
           />
         )}
+        {activeTab === 'portfolio' && <Portfolio title={t.portfolio} text={t.portfolioText} />}
         {activeTab === 'contact' && <Contact title={t.contact} text={t.contactText} />}
       </main>
 
