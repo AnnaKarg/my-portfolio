@@ -3,13 +3,11 @@ import React from 'react';
 function Start({ title, text, startText, imageUrl = '/my_image1.5.jpg' }) {
   return (
     <div style={heroStyle}>
-      {/* 1. Τα Κείμενα (πάνω) */}
       <h1 style={titleStyle}>{title}</h1>
       
       <p style={detailStyle}>{startText}</p>
       <p style={subtitleStyle}>{text}</p>
       
-      {/* 2. Η Φωτογραφία (κάτω) */}
       <div style={avatarWrapper}>
         <img 
           src={imageUrl} 
