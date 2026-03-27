@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Start from './Start';
 import About_Me from './About_Me';
 import Education from './Education';
@@ -28,7 +28,7 @@ const translations = {
     educationText5:"Βαθμός απολυτηρίου: “΄Αριστα” ΔΕΚΑΕΝΝΕΑ κι ΕΞΙ ΔΕΚΑΤΑ (19,6) Διαγωγή: ΕΞΑΙΡΕΤΙΚΗ",
     educationText6:"Σεπτέμβριος 2018 - Ιούνιος 2021",
     certificateText1:"Lower Certificate ECCE",
-    certificateText2:"Πιστοποιητικό Γνώσης Χειρισμού Η/Υ",
+    certificateText2:"Πιστοποιητικό Γνώσης Χειρισμού Η/Υ:",
     certificateText3:"• Χρήση Η/Υ και διαχείριση αρχείων Ελληνική έκδοση, Windows 7, Syllabus SYITGR06 • Επεξεργασία κειμένου Ελληνική έκδοση, Microsoft Word 2007, Syllabus SYITGR06 • Υπολογιστικά φύλλα Ελληνική έκδοση, Microsoft Excel 2007, Syllabus SYITGR06 • Βάσεις δεδομένων Ελληνική έκδοση, Microsoft Access 2007, Syllabus SYITGR06 • Παρουσιάσεις Ελληνική έκδοση, Microsoft Power Point 2007, Syllabus SYITGR06 • Υπηρεσίες διαδικτύου Ελληνική έκδοση, MS Internet Explorer, Microsoft Outlook 2007, Syllabus SYITGR06 ",
     activitiesText1:"· Υπάλληλος πολλαπλών αρμοδιοτήτων στο Viale Espresso and Convenience Store",
     activitiesText2:"Οκτώβριος 2022 – Ιούνιος 2023",
@@ -62,7 +62,7 @@ const translations = {
     educationText5: "Graduation Grade: “Excellent” Eleven and Six Tens (19.6) Recommendation: Excellent",
     educationText6: "September 2018 - June 2021",
     certificateText1: "Lower Certificate ECCE",
-    certificateText2: "Computer Skills Certificate",
+    certificateText2: "Computer Skills Certificate:",
     certificateText3: "• Computer use and file management, Windows 7, Syllabus SYITGR06 • Word processing, Microsoft Word 2007, Syllabus SYITGR06 • Spreadsheets, Microsoft Excel 2007, Syllabus SYITGR06 • Databases, Microsoft Access 2007, Syllabus SYITGR06 • Presentations, Microsoft Power Point 2007, Syllabus SYITGR06 • Internet services, MS Internet Explorer, Microsoft Outlook 2007, Syllabus SYITGR06",
     activitiesText1: "· Multi-role employee at Viale Espresso and Convenience Store",
     activitiesText2: "October 2022 - June 2023",
@@ -80,7 +80,11 @@ const translations = {
 function App() {
   const [language, setLanguage] = useState('el');
   const [activeTab, setActiveTab] = useState('start');
-  const [theme, setTheme] = useState('dark'); 
+  const [theme, setTheme] = useState('dark');
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
 
   const t = translations[language];
 
@@ -91,7 +95,9 @@ function App() {
   };
 
   return (
-    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
+    <div style={appShellStyle}>
+      <div style={orbOneStyle} aria-hidden="true" />
+      <div style={orbTwoStyle} aria-hidden="true" />
       
       {/* --- NAVIGATION BAR --- */}
       <nav style={navStyle}>
@@ -114,17 +120,21 @@ function App() {
       </nav>
 
       {/* --- MAIN CONTENT AREA --- */}
- <main style={{ 
-  flex: 1,
-  display: 'flex', 
-  flexDirection: 'column', 
-  justifyContent: 'center', 
-  alignItems: 'center', 
-  width: '100%',
-  padding: '20px',
-  boxSizing: 'border-box',
-  overflowY: 'auto' 
-}}>
+      <main
+        style={{
+          flex: 1,
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          alignItems: 'center',
+          width: '100%',
+          padding: '24px clamp(16px, 3vw, 36px) 32px',
+          boxSizing: 'border-box',
+          overflowY: 'auto',
+          position: 'relative',
+          zIndex: 1
+        }}
+      >
         {activeTab === 'start' && <Start title={t.name} text={t.welcome} startText={t.startText} />}
         {activeTab === 'about' && <About_Me title={t.about} text={t.aboutMeText} downloadLabel={t.downloadCv} cvFileUrl='/CV.pdf' />}
         {activeTab === 'education' && (
@@ -169,74 +179,101 @@ function App() {
 
 // --- STYLES ---
 
+const appShellStyle = {
+  height: '100vh',
+  display: 'flex',
+  flexDirection: 'column',
+  overflow: 'hidden',
+  position: 'relative'
+};
+
+const orbOneStyle = {
+  position: 'absolute',
+  width: '420px',
+  height: '420px',
+  borderRadius: '50%',
+  top: '-170px',
+  right: '-80px',
+  background: 'var(--bg-orb-1)',
+  filter: 'blur(42px)',
+  opacity: 0.58,
+  pointerEvents: 'none'
+};
+
+const orbTwoStyle = {
+  position: 'absolute',
+  width: '360px',
+  height: '360px',
+  borderRadius: '50%',
+  bottom: '-140px',
+  left: '-100px',
+  background: 'var(--bg-orb-2)',
+  filter: 'blur(46px)',
+  opacity: 0.52,
+  pointerEvents: 'none'
+};
+
 const navStyle = {
   display: 'flex',
-  flexWrap: 'wrap', 
-  justifyContent: 'center', 
+  flexWrap: 'wrap',
+  justifyContent: 'center',
   alignItems: 'center',
-  padding: 'clamp(10px, 3vh, 20px) 10px', 
-  background: 'var(--nav-bg, #222)',
-  position: 'relative', 
+  gap: '6px',
+  padding: '14px clamp(12px, 2.2vw, 28px)',
+  background: 'var(--nav-bg)',
+  position: 'sticky',
+  top: 0,
   width: '100%',
   zIndex: 1000,
-  boxSizing: 'border-box'
+  boxSizing: 'border-box',
+  borderBottom: '1px solid var(--border-color)',
+  backdropFilter: 'blur(12px)'
 };
 
-const linkBtn = { 
-  background: 'none', 
-  border: 'none', 
-  color: 'var(--text-color, white)',
-  cursor: 'pointer', 
-  fontWeight: 'bold',
-  padding: 'clamp(5px, 2vh, 10px) clamp(5px, 1vw, 15px)', 
-  fontSize: 'clamp(12px, 2.5vw, 15px)', 
+const linkBtn = {
+  background: 'transparent',
+  border: '1px solid transparent',
+  color: 'var(--text-color)',
+  cursor: 'pointer',
+  fontWeight: 600,
+  padding: '10px 14px',
+  fontSize: 'clamp(12px, 1.4vw, 14px)',
+  borderRadius: '999px',
   textDecoration: 'none',
-  borderBottom: '2px solid transparent',
-  transition: 'all 0.3s ease'
+  transition: 'all 0.25s ease'
 };
 
-const activeBtn = { 
-  ...linkBtn, 
-  color: 'var(--accent-color, cyan)', 
-  borderBottom: '2px solid var(--accent-color, cyan)' 
+const activeBtn = {
+  ...linkBtn,
+  color: 'var(--accent-contrast)',
+  border: '1px solid transparent',
+  background: 'linear-gradient(135deg, var(--accent-color), var(--accent-2))',
+  boxShadow: '0 8px 20px var(--accent-shadow)'
 };
 
 const controlsContainer = {
   marginLeft: 'auto',
   display: 'flex',
-  gap: '10px',
+  gap: '8px',
   alignItems: 'center',
-  padding: '0 10px'
+  padding: '0 6px'
 };
 
 const langBtn = {
   cursor: 'pointer',
-  background: 'transparent',
+  background: 'var(--surface-color)',
   color: 'var(--text-color)',
-  border: '1px solid var(--text-color)',
-  padding: '5px 10px',
-  borderRadius: '5px',
-  fontWeight: 'bold'
+  border: '1px solid var(--border-color)',
+  padding: '8px 12px',
+  borderRadius: '999px',
+  fontWeight: 700,
+  boxShadow: 'var(--surface-shadow)'
 };
 
 const themeBtnStyle = {
   ...langBtn,
-  fontSize: '1.2rem',
-  border: 'none'
+  fontSize: '1.05rem',
+  minWidth: '44px'
 };
-
-const mediaStyles = `
-  @media (min-width: 769px) {
-    nav {
-      position: fixed !important;
-      justify-content: flex-start !important;
-      padding: 15px 30px !important;
-    }
-  }
-`;
-
-const styleTag = document.createElement('style');
-styleTag.innerHTML = mediaStyles;
-document.head.appendChild(styleTag);
 
 export default App;

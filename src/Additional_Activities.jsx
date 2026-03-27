@@ -37,23 +37,29 @@ function Additional_Activities({
 const containerStyle = {
   textAlign: 'center',
   width: '100%',
+  maxWidth: '980px',
   boxSizing: 'border-box',
-  padding: '24px 20px 20px',
+  padding: 'clamp(24px, 4vh, 34px) clamp(16px, 3vw, 32px)',
   color: 'var(--text-color)',
-  backgroundColor: 'transparent',
-  animation: 'fadeIn 1s ease-in'
+  background: 'var(--surface-color)',
+  border: '1px solid var(--border-color)',
+  borderRadius: '22px',
+  boxShadow: 'var(--surface-shadow)',
+  backdropFilter: 'blur(10px)',
+  animation: 'fadeIn 0.7s ease-in'
 };
 
 const titleStyle = {
-  fontSize: '3.4rem',
+  fontSize: 'clamp(1.9rem, 6vw, 3rem)',
   color: 'var(--text-color)',
-  marginBottom: '10px'
+  marginBottom: '10px',
+  lineHeight: 1.1
 };
 
 const contentStyle = {
   maxWidth: '900px',
   margin: '28px auto 0',
-  borderTop: '1px solid rgba(128, 128, 128, 0.45)',
+  borderTop: '1px solid var(--border-color)',
   paddingTop: '14px',
   textAlign: 'left'
 };
@@ -71,7 +77,7 @@ const activityLabelStyle = {
   margin: 0,
   flex: '1 1 580px',
   minWidth: '250px',
-  fontSize: '1.2rem',
+  fontSize: 'clamp(1rem, 2.2vw, 1.1rem)',
   lineHeight: '1.35',
   color: 'var(--text-color)',
   fontWeight: 600
@@ -80,9 +86,9 @@ const activityLabelStyle = {
 const activityValueStyle = {
   margin: 0,
   flex: '0 0 auto',
-  fontSize: '1.2rem',
+  fontSize: 'clamp(0.95rem, 2vw, 1.05rem)',
   lineHeight: '1.35',
-  color: 'var(--text-color)',
+  color: 'var(--accent-color)',
   whiteSpace: 'nowrap'
 };
 

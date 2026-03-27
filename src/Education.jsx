@@ -35,17 +35,23 @@ function Education({
 const containerStyle = {
   textAlign: 'center',
   width: '100%',
+  maxWidth: '980px',
   boxSizing: 'border-box',
-  padding: '24px 20px 20px',
+  padding: 'clamp(24px, 4vh, 34px) clamp(16px, 3vw, 32px)',
   color: 'var(--text-color)',
-  backgroundColor: 'transparent',
-  animation: 'fadeIn 1s ease-in'
+  background: 'var(--surface-color)',
+  border: '1px solid var(--border-color)',
+  borderRadius: '22px',
+  boxShadow: 'var(--surface-shadow)',
+  backdropFilter: 'blur(10px)',
+  animation: 'fadeIn 0.7s ease-in'
 };
 
 const titleStyle = {
-  fontSize: '3.4rem',
+  fontSize: 'clamp(1.9rem, 6vw, 3rem)',
   color: 'var(--text-color)',
-  marginBottom: '10px'
+  marginBottom: '10px',
+  lineHeight: 1.1
 };
 
 const entryStyle = {
@@ -55,7 +61,7 @@ const entryStyle = {
   gap: '24px',
   maxWidth: '900px',
   margin: '28px auto 0',
-  borderBottom: '1px solid rgba(128, 128, 128, 0.25)',
+  borderBottom: '1px solid var(--border-color)',
   paddingBottom: '14px',
   flexWrap: 'wrap'
 };
@@ -74,19 +80,19 @@ const entryTitleStyle = {
 
 const entryTextStyle = {
   margin: 0,
-  fontSize: '1.2rem',
+  fontSize: 'clamp(1rem, 2.2vw, 1.1rem)',
   lineHeight: '1.7',
-  color: 'var(--text-color)',
+  color: 'var(--muted-text)',
   whiteSpace: 'pre-line'
 };
 
 const dateStyle = {
   margin: 0,
   flex: '0 0 auto',
-  fontSize: '1.2rem',
-  color: 'var(--text-color)',
+  fontSize: 'clamp(0.95rem, 2vw, 1.05rem)',
+  color: 'var(--accent-color)',
   whiteSpace: 'nowrap',
-  fontWeight: 500
+  fontWeight: 700
 };
 
 export default Education;

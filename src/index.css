@@ -1,30 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap');
+
 :root {
-  /* Light Mode */
-  --bg-color: #f8f9fa; /* Ένα πολύ απαλό γκρι αντί για "χτυπητό" λευκό */
-  --bg-gradient: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
-  --text-color: #222222;
-  --nav-bg: rgba(244, 244, 244, 0.95);
-  --accent-color: #00d1b2;
+  --bg-color: #f8fbff;
+  --bg-gradient:
+    radial-gradient(circle at 88% 6%, rgba(14, 165, 233, 0.24), transparent 44%),
+    radial-gradient(circle at 12% 92%, rgba(20, 184, 166, 0.2), transparent 40%),
+    linear-gradient(150deg, #f8fbff 0%, #eef2ff 52%, #effaf9 100%);
+  --text-color: #0b1220;
+  --muted-text: #334155;
+  --nav-bg: rgba(255, 255, 255, 0.66);
+  --surface-color: rgba(255, 255, 255, 0.75);
+  --surface-strong: #ffffff;
+  --border-color: rgba(15, 23, 42, 0.14);
+  --accent-color: #0ea5e9;
+  --accent-2: #14b8a6;
+  --accent-contrast: #f8fbff;
+  --accent-shadow: rgba(14, 165, 233, 0.36);
+  --surface-shadow: 0 14px 34px rgba(15, 23, 42, 0.12);
+  --bg-orb-1: radial-gradient(circle, rgba(14, 165, 233, 0.92) 0%, rgba(14, 165, 233, 0) 70%);
+  --bg-orb-2: radial-gradient(circle, rgba(20, 184, 166, 0.84) 0%, rgba(20, 184, 166, 0) 70%);
 }
 
 [data-theme='dark'] {
-  /* Dark Mode */
-  --bg-color: #121212;
-  /* Αντί για κύκλο, βάζουμε μια πολύ απαλή κλίση από πάνω προς τα κάτω */
-  --bg-gradient: linear-gradient(180deg, #1a1c20 0%, #121212 100%);
-  --text-color: #eeeeee;
-  --nav-bg: rgba(30, 30, 30, 0.95);
-  --accent-color: #00ffcc;
+  --bg-color: #071225;
+  --bg-gradient:
+    radial-gradient(circle at 88% 12%, rgba(14, 165, 233, 0.26), transparent 42%),
+    radial-gradient(circle at 12% 92%, rgba(20, 184, 166, 0.2), transparent 38%),
+    linear-gradient(160deg, #071225 0%, #0b1730 48%, #071a26 100%);
+  --text-color: #e2ecff;
+  --muted-text: #9fb0c8;
+  --nav-bg: rgba(4, 10, 20, 0.74);
+  --surface-color: rgba(8, 18, 34, 0.7);
+  --surface-strong: rgba(9, 21, 40, 0.88);
+  --border-color: rgba(154, 176, 209, 0.22);
+  --accent-color: #38bdf8;
+  --accent-2: #2dd4bf;
+  --accent-contrast: #061321;
+  --accent-shadow: rgba(56, 189, 248, 0.22);
+  --surface-shadow: 0 16px 34px rgba(2, 6, 23, 0.45);
+  --bg-orb-1: radial-gradient(circle, rgba(56, 189, 248, 0.88) 0%, rgba(56, 189, 248, 0) 70%);
+  --bg-orb-2: radial-gradient(circle, rgba(45, 212, 191, 0.8) 0%, rgba(45, 212, 191, 0) 70%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100vh;
 }
 
 body {
   margin: 0;
   padding: 0;
-  min-height: 100vh;
   background-color: var(--bg-color);
   background-image: var(--bg-gradient);
   background-attachment: fixed;
   color: var(--text-color);
-  /* Η μετάβαση τώρα θα είναι ομοιόμορφη σε όλη την επιφάνεια */
-  transition: background 0.4s ease-in-out, background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+  font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+  transition: background 0.45s ease, background-color 0.45s ease, color 0.35s ease;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Sora', 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+a,
+button {
+  transition: transform 0.22s ease, box-shadow 0.22s ease, opacity 0.22s ease, background-color 0.22s ease, color 0.22s ease, border-color 0.22s ease;
+}
+
+button:hover,
+a:hover {
+  transform: translateY(-1px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
