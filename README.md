@@ -1,18 +1,20 @@
-# React + Vite
+# My Personalized Online CV 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live demo of my personalized online CV, built with React.
 
-Currently, two official plugins are available:
+## Live Link
+Check out the project here: [https://my-portfolio-puce-theta-45.vercel.app](https://my-portfolio-puce-theta-45.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## Features
+* **Responsive Design:** Fully optimized for mobile, tablet, and desktop screens.
+* **Dark & Light Mode:** Seamless theme switching with smooth transitions.
+* **Multi-language Support:** Content available in both Greek and English.
+* **Interactive UI:** Built with React state management for a smooth user experience.
+* **Professional Assets:** Includes a downloadable PDF version of my CV.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
-
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Tech Stack
+* **Frontend:** React.js
+* **Styling:** CSS3 (Custom Variables & Media Queries)
+* **Deployment:** Vercel
