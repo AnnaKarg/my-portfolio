@@ -3,7 +3,7 @@
 Live demo of my personalized online CV, built with React.
 
 ## Live Link
-Check out the project here: [https://y-portfolio-puce-theta-45.vercel.app](https://y-portfolio-puce-theta-45.vercel.app)
+Check out the project here: [https://my-portfolio-puce-theta-45.vercel.app](https://my-portfolio-puce-theta-45.vercel.app)
 
 ---
 
