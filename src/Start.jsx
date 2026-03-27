@@ -1,15 +1,21 @@
 import React from 'react';
 
-function Start({ title, text, startText }) {
+function Start({ title, text, startText, imageUrl = '/my_image1.5.jpg' }) {
   return (
     <div style={heroStyle}>
+      {/* 1. Τα Κείμενα (πάνω) */}
       <h1 style={titleStyle}>{title}</h1>
       
       <p style={detailStyle}>{startText}</p>
       <p style={subtitleStyle}>{text}</p>
       
-      <div style={avatarPlaceholder}>
-        <span style={{fontSize: '44px'}}>👩‍💻</span>
+      {/* 2. Η Φωτογραφία (κάτω) */}
+      <div style={avatarWrapper}>
+        <img 
+          src={imageUrl} 
+          alt="Profile" 
+          style={avatarImgStyle} 
+        />
       </div>
     </div>
   );
@@ -27,7 +33,10 @@ const heroStyle = {
   border: '1px solid var(--border-color)',
   borderRadius: '22px',
   boxShadow: 'var(--surface-shadow)',
-  backdropFilter: 'blur(10px)'
+  backdropFilter: 'blur(10px)',
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center'
 };
 
 const titleStyle = {
@@ -50,21 +59,29 @@ const subtitleStyle = {
   fontSize: 'clamp(0.9rem, 2vw, 1.2rem)',
   color: 'var(--muted-text)',
   maxWidth: '600px',
-  margin: '0 auto 30px',
+  margin: '0 auto 40px', 
   lineHeight: '1.6'
 };
 
-const avatarPlaceholder = {
-  width: 'clamp(120px, 25vw, 200px)', 
-  height: 'clamp(120px, 25vw, 200px)',
+const avatarWrapper = {
+  width: 'clamp(140px, 25vw, 220px)', 
+  height: 'clamp(140px, 25vw, 220px)',
   borderRadius: '50%',
   background: 'linear-gradient(145deg, var(--surface-strong), var(--surface-color))',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  margin: '0 auto',
+  margin: '0 auto', 
   border: '4px solid var(--accent-color)',
-  boxShadow: '0 14px 24px var(--accent-shadow)'
+  boxShadow: '0 14px 24px var(--accent-shadow)',
+  overflow: 'hidden'
+};
+
+const avatarImgStyle = {
+  width: '100%',
+  height: '100%',
+  objectFit: 'cover',
+  display: 'block'
 };
 
 export default Start;
