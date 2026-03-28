@@ -59,7 +59,7 @@ const translations = {
     educationText2: "Department of Information and Electronic Engineering, International Hellenic University, Thessaloniki (Sindos)",
     educationText3: "October 2021 - Present",
     educationText4: "Graduate of the 1st General High School of Drama",
-    educationText5: "Graduation Grade: “Excellent” Eleven and Six Tens (19.6) Recommendation: Excellent",
+    educationText5: "Graduation Grade: “Excellent” Nineteen point Six  (19.6) Conduct: Excellent",
     educationText6: "September 2018 - June 2021",
     certificateText1: "Lower Certificate ECCE",
     certificateText2: "Computer Skills Certificate:",
