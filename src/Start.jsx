@@ -32,8 +32,7 @@ const heroStyle = {
   background: 'var(--surface-color)',
   border: '1px solid var(--border-color)',
   borderRadius: '12px',
-  boxShadow: 'var(--surface-shadow)',
-  animation: 'fadeIn 0.7s ease-out'
+  boxShadow: 'var(--surface-shadow)'
 };
 
 const textSideStyle = { flex: '1 1 450px', textAlign: 'left' };

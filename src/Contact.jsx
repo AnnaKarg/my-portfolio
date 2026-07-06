@@ -25,8 +25,7 @@ const heroStyle = {
   background: 'var(--surface-color)',
   border: '1px solid var(--border-color)',
   borderRadius: '12px',
-  boxShadow: 'var(--surface-shadow)',
-  animation: 'fadeIn 0.7s ease-in'
+  boxShadow: 'var(--surface-shadow)'
 };
 
 const titleStyle = {

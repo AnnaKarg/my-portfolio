@@ -66,6 +66,7 @@ function Portfolio({ title }) {
         ))}
       </div>
 
+      <h2 style={{ ...techStackHeadingStyle, marginBottom: '16px' }}>Projects</h2>
       <div style={gridStyle}>
         {projects.map((proj, index) => (
           <div key={index} style={cardStyle}>
@@ -110,8 +111,7 @@ const containerStyle = {
   background: 'var(--surface-color)',
   border: '1px solid var(--border-color)',
   borderRadius: '12px',
-  boxShadow: 'var(--surface-shadow)',
-  animation: 'fadeIn 0.7s ease-in'
+  boxShadow: 'var(--surface-shadow)'
 };
 
 const titleStyle = {
