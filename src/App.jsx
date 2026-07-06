@@ -96,8 +96,6 @@ function App() {
 
   return (
     <div style={appShellStyle}>
-      <div style={orbOneStyle} aria-hidden="true" />
-      <div style={orbTwoStyle} aria-hidden="true" />
       
       {/* --- NAVIGATION BAR --- */}
       <nav style={navStyle}>
