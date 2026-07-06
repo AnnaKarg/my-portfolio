@@ -16,7 +16,7 @@ function Contact({ title, text }) {
 }
 
 const heroStyle = {
-  textAlign: 'left',
+  textAlign: 'center',
   width: '100%',
   maxWidth: '980px',
   boxSizing: 'border-box',
@@ -47,6 +47,7 @@ const descriptionStyle = {
 const linksContainer = {
   display: 'flex',
   flexWrap: 'wrap',
+  justifyContent: 'center',
   gap: '12px',
   marginTop: '24px'
 };
