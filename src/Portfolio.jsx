@@ -3,9 +3,11 @@ import React from 'react';
 function Portfolio({ title }) {
   const skills = [
     { cat: "Languages", items: ["JavaScript", "Python", "Java", "HTML5", "CSS3", "SQL"] },
-    { cat: "Frontend", items: ["React.js", "Tailwind CSS", "Responsive Design"] },
-    { cat: "Backend & DBs", items: ["FastAPI", "REST APIs", "PHP", "PostgreSQL", "MySQL"] },
-    { cat: "AI & Tools", items: ["LangGraph", "LangChain", "Docker", "Git", "GitHub"] }
+    { cat: "Frontend", items: ["React.js", "CSS", "Tailwind CSS", "Responsive Web Design"] },
+    { cat: "Backend", items: ["FastAPI", "REST APIs", "PHP", "Pydantic", "Bcrypt"] },
+    { cat: "Databases", items: ["PostgreSQL", "MySQL", "SQLite"] },
+    { cat: "Tools & DevOps", items: ["Git", "GitHub", "Docker", "Vercel", "Render", "VS Code"] },
+    { cat: "AI / LLMs", items: ["LangGraph", "LangChain", "LLM Integration", "LangSmith", "Multi-Agent Orchestration"] }
   ];
 
   // Παίρνουμε τα δεδομένα απευθείας από το επίσημο CV σου
