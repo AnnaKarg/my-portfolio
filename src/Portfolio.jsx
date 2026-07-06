@@ -21,9 +21,9 @@ function Portfolio({ title }) {
     },
     {
       name: "Gamified Calendar Application",
-      status: ["In Progress"],
+      status: ["Completed"],
       tech: "React, Tailwind CSS, Python, FastAPI, SQLite, SQLAlchemy, Pydantic, Bcrypt",
-      desc: "Developing a full-stack, RPG-inspired productivity calendar converting task management into an XP-based progression system. Implemented dynamic drag-and-drop mechanics using HTML5 API.",
+      desc: "Developed a full-stack, RPG-inspired productivity calendar converting task management into an XP-based progression system. Implemented dynamic drag-and-drop mechanics using HTML5 API.",
       link: "https://cheerful-integrity-production.up.railway.app"
     },
     {
