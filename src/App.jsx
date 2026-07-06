@@ -187,31 +187,6 @@ const appShellStyle = {
   position: 'relative'
 };
 
-const orbOneStyle = {
-  position: 'absolute',
-  width: '420px',
-  height: '420px',
-  borderRadius: '50%',
-  top: '-170px',
-  right: '-80px',
-  background: 'var(--bg-orb-1)',
-  filter: 'blur(42px)',
-  opacity: 0.58,
-  pointerEvents: 'none'
-};
-
-const orbTwoStyle = {
-  position: 'absolute',
-  width: '360px',
-  height: '360px',
-  borderRadius: '50%',
-  bottom: '-140px',
-  left: '-100px',
-  background: 'var(--bg-orb-2)',
-  filter: 'blur(46px)',
-  opacity: 0.52,
-  pointerEvents: 'none'
-};
 
 const navStyle = {
   display: 'flex',
@@ -235,20 +210,18 @@ const linkBtn = {
   border: '1px solid transparent',
   color: 'var(--text-color)',
   cursor: 'pointer',
-  fontWeight: 600,
-  padding: '10px 14px',
+  fontWeight: 500,
+  padding: '8px 16px',
   fontSize: 'clamp(12px, 1.4vw, 14px)',
-  borderRadius: '999px',
+  borderRadius: '6px', /* 6px δίνει πιο "document" αίσθηση παρά "app" */
   textDecoration: 'none',
-  transition: 'all 0.25s ease'
+  transition: 'all 0.2s ease'
 };
 
 const activeBtn = {
   ...linkBtn,
   color: 'var(--accent-contrast)',
-  border: '1px solid transparent',
-  background: 'linear-gradient(135deg, var(--accent-color), var(--accent-2))',
-  boxShadow: '0 8px 20px var(--accent-shadow)'
+  background: 'var(--accent-color)',
 };
 
 const controlsContainer = {

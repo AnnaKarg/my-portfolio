@@ -45,15 +45,14 @@ const descriptionStyle = {
 const downloadBtnStyle = {
   display: 'inline-block',
   marginTop: '24px',
-  padding: '11px 18px',
-  borderRadius: '999px',
-  border: '1px solid transparent',
-  background: 'linear-gradient(135deg, var(--accent-color), var(--accent-2))',
+  padding: '10px 20px',
+  borderRadius: '6px', /* Πιο τετραγωνισμένο/σοβαρό αντί για 999px */
+  border: '1px solid var(--accent-color)',
+  background: 'var(--accent-color)',
   color: 'var(--accent-contrast)',
   textDecoration: 'none',
-  fontWeight: 700,
-  boxShadow: '0 10px 20px var(--accent-shadow)',
-  transition: 'all 0.25s ease'
+  fontWeight: 600,
+  transition: 'background-color 0.2s ease'
 };
 
 export default About_Me;
