@@ -56,13 +56,14 @@ const linksContainer = {
 const linkStyle = {
   textDecoration: 'none',
   color: 'var(--accent-contrast)',
-  fontWeight: 700,
+  fontWeight: 600,
   fontSize: '1rem',
-  border: '1px solid transparent',
-  background: 'linear-gradient(135deg, var(--accent-color), var(--accent-2))',
-  padding: '10px 18px',
-  borderRadius: '999px',
-  boxShadow: '0 8px 18px var(--accent-shadow)'
+  border: '1px solid var(--accent-color)',
+  background: 'var(--accent-color)',
+  padding: '10px 20px',
+  borderRadius: '6px', /* Πιο minimal/professional flat look */
+  boxShadow: 'none',
+  transition: 'opacity 0.2s ease'
 };
 
 export default Contact;

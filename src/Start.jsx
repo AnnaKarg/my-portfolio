@@ -65,13 +65,12 @@ const avatarWrapper = {
   width: 'clamp(140px, 25vw, 220px)', 
   height: 'clamp(140px, 25vw, 220px)',
   borderRadius: '50%',
-  background: 'linear-gradient(145deg, var(--surface-strong), var(--surface-color))',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
   margin: '0 auto', 
-  border: '4px solid var(--accent-color)',
-  boxShadow: '0 14px 24px var(--accent-shadow)',
+  border: '3px solid var(--accent-color)',
+  boxShadow: 'none', /* Αφαίρεση glow σκιάς */
   overflow: 'hidden'
 };
 
