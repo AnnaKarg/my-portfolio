@@ -12,28 +12,28 @@ function Portfolio({ title }) {
   const projects = [
     {
       name: "AI Python Tutor (Thesis Project)",
-      status: "In Progress",
+      status: ["In Progress"],
       tech: "Python, FastAPI, LangGraph, LangChain, React, PostgreSQL, LangSmith",
       desc: "Designed and built a multi-agent pipeline (Mentor, Debugger, Assessor) using LangGraph for personalized Python tutoring. Combined deterministic code analysis with LLM-based reasoning to reduce hallucinations.",
       link: "https://my-thesis-nine.vercel.app"
     },
     {
       name: "Gamified Calendar Application",
-      status: "In Progress",
+      status: ["In Progress"],
       tech: "React, Tailwind CSS, Python, FastAPI, SQLite, SQLAlchemy, Pydantic, Bcrypt",
       desc: "Developing a full-stack, RPG-inspired productivity calendar converting task management into an XP-based progression system. Implemented dynamic drag-and-drop mechanics using HTML5 API.",
-      link: "https://my-portfolio-puce-theta-45.vercel.app"
+      link: "https://cheerful-integrity-production.up.railway.app"
     },
     {
       name: "Online Backgammon Game",
-      status: "Team Project",
+      status: ["Team Project", "Completed"],
       tech: "PHP, MySQL, JavaScript, HTML5, CSS3, REST APIs",
       desc: "Collaborated in a team environment to engineer a full-stack online board game (Plakoto variant). Built server-side game logic in PHP managing complex calculations and dice algorithms.",
       link: "https://users.iee.ihu.gr/~iee2021011/"
     },
     {
       name: "Personalized Online CV",
-      status: "Completed",
+      status: ["Completed"],
       tech: "React.js, CSS3, Vercel",
       desc: "Built a clean personal portfolio web app featuring dark/light mode toggles, global state management, and dynamic bilingual support.",
       link: "https://my-portfolio-puce-theta-45.vercel.app"
@@ -69,18 +69,22 @@ function Portfolio({ title }) {
           <div key={index} style={cardStyle}>
             <div style={cardHeaderStyle}>
               <h2 style={projNameStyle}>{proj.name}</h2>
-              <span style={{
-                ...statusStyle,
-                color: statusColors[proj.status] || 'var(--muted-text)',
-                borderColor: statusColors[proj.status] ? `${statusColors[proj.status]}66` : 'var(--border-color)',
-                background: statusColors[proj.status] ? `${statusColors[proj.status]}1A` : 'var(--surface-color)'
-              }}>
-                <span style={{
-                  ...statusDotStyle,
-                  background: statusColors[proj.status] || 'var(--muted-text)'
-                }} />
-                {proj.status}
-              </span>
+              <div style={statusGroupStyle}>
+                {proj.status.map((s, i) => (
+                  <span key={i} style={{
+                    ...statusStyle,
+                    color: statusColors[s] || 'var(--muted-text)',
+                    borderColor: statusColors[s] ? `${statusColors[s]}66` : 'var(--border-color)',
+                    background: statusColors[s] ? `${statusColors[s]}1A` : 'var(--surface-color)'
+                  }}>
+                    <span style={{
+                      ...statusDotStyle,
+                      background: statusColors[s] || 'var(--muted-text)'
+                    }} />
+                    {s}
+                  </span>
+                ))}
+              </div>
             </div>
             <p style={techStyle}><strong>Tech Stack:</strong> {proj.tech}</p>
             <p style={descStyle}>{proj.desc}</p>
@@ -189,6 +193,12 @@ const projNameStyle = {
   margin: 0,
   fontSize: '1.25rem',
   fontWeight: 700
+};
+
+const statusGroupStyle = {
+  display: 'flex',
+  flexWrap: 'wrap',
+  gap: '6px'
 };
 
 const statusStyle = {

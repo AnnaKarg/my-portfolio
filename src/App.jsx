@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Start from './Start';
 import About_Me from './About_Me';
 import Education from './Education';
@@ -80,10 +80,17 @@ function App() {
   const [language, setLanguage] = useState('el');
   const [activeTab, setActiveTab] = useState('start');
   const [theme, setTheme] = useState('dark');
+  const mainRef = useRef(null);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
+
+  useEffect(() => {
+    if (mainRef.current) {
+      mainRef.current.scrollTop = 0;
+    }
+  }, [activeTab]);
 
   const t = translations[language];
 
@@ -114,10 +121,13 @@ function App() {
             {theme === 'light' ? '🌙' : '☀️'}
           </button>
         </div>
+
+        <div style={scrollShadowStyle} aria-hidden="true" />
       </nav>
 
       {/* --- MAIN CONTENT AREA --- */}
       <main
+        ref={mainRef}
         style={{
           flex: 1,
           display: 'flex',
@@ -129,9 +139,7 @@ function App() {
           boxSizing: 'border-box',
           overflowY: 'auto',
           position: 'relative',
-          zIndex: 1,
-          maskImage: 'linear-gradient(to bottom, transparent 0, black 20px, black calc(100% - 20px), transparent 100%)',
-          WebkitMaskImage: 'linear-gradient(to bottom, transparent 0, black 20px, black calc(100% - 20px), transparent 100%)'
+          zIndex: 1
         }}
       >
         {activeTab === 'start' && <Start title={t.name} text={t.welcome} startText={t.startText} />}
@@ -199,6 +207,16 @@ const navStyle = {
   boxSizing: 'border-box',
   borderBottom: '1px solid var(--border-color)',
   backdropFilter: 'blur(12px)'
+};
+
+const scrollShadowStyle = {
+  position: 'absolute',
+  left: 0,
+  right: 0,
+  top: '100%',
+  height: '20px',
+  background: 'linear-gradient(to bottom, var(--nav-bg), transparent)',
+  pointerEvents: 'none'
 };
 
 const linkBtn = {
