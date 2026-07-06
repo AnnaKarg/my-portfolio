@@ -129,7 +129,9 @@ function App() {
           boxSizing: 'border-box',
           overflowY: 'auto',
           position: 'relative',
-          zIndex: 1
+          zIndex: 1,
+          maskImage: 'linear-gradient(to bottom, transparent 0, black 20px, black calc(100% - 20px), transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent 0, black 20px, black calc(100% - 20px), transparent 100%)'
         }}
       >
         {activeTab === 'start' && <Start title={t.name} text={t.welcome} startText={t.startText} />}

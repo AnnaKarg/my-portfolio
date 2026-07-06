@@ -40,6 +40,12 @@ function Portfolio({ title }) {
     }
   ];
 
+  const statusColors = {
+    "Completed": "#22c55e",
+    "In Progress": "#f59e0b",
+    "Team Project": "#818cf8"
+  };
+
   return (
     <div style={containerStyle}>
       <h1 style={titleStyle}>{title}</h1>
@@ -63,7 +69,18 @@ function Portfolio({ title }) {
           <div key={index} style={cardStyle}>
             <div style={cardHeaderStyle}>
               <h2 style={projNameStyle}>{proj.name}</h2>
-              <span style={statusStyle}>{proj.status}</span>
+              <span style={{
+                ...statusStyle,
+                color: statusColors[proj.status] || 'var(--muted-text)',
+                borderColor: statusColors[proj.status] ? `${statusColors[proj.status]}66` : 'var(--border-color)',
+                background: statusColors[proj.status] ? `${statusColors[proj.status]}1A` : 'var(--surface-color)'
+              }}>
+                <span style={{
+                  ...statusDotStyle,
+                  background: statusColors[proj.status] || 'var(--muted-text)'
+                }} />
+                {proj.status}
+              </span>
             </div>
             <p style={techStyle}><strong>Tech Stack:</strong> {proj.tech}</p>
             <p style={descStyle}>{proj.desc}</p>
@@ -175,13 +192,22 @@ const projNameStyle = {
 };
 
 const statusStyle = {
+  display: 'inline-flex',
+  alignItems: 'center',
+  gap: '6px',
   fontSize: '0.8rem',
-  padding: '4px 8px',
-  borderRadius: '4px',
-  background: 'var(--surface-color)',
+  padding: '4px 10px',
+  borderRadius: '999px',
   border: '1px solid var(--border-color)',
   fontWeight: 600,
   color: 'var(--muted-text)'
+};
+
+const statusDotStyle = {
+  width: '6px',
+  height: '6px',
+  borderRadius: '50%',
+  flexShrink: 0
 };
 
 const techStyle = {

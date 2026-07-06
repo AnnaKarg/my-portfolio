@@ -46,12 +46,8 @@ const containerStyle = {
   width: '100%',
   maxWidth: '980px',
   boxSizing: 'border-box',
-  padding: 'clamp(32px, 5vh, 44px) clamp(20px, 4vw, 48px)',
+  padding: 'clamp(12px, 3vh, 24px) clamp(4px, 2vw, 12px)',
   color: 'var(--text-color)',
-  background: 'var(--surface-color)',
-  border: '1px solid var(--border-color)',
-  borderRadius: '12px',
-  boxShadow: 'var(--surface-shadow)',
   animation: 'fadeIn 0.7s ease-in'
 };
 
