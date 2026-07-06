@@ -3,74 +3,88 @@ import React from 'react';
 function Start({ title, text, startText, imageUrl = '/my_image1.5.jpg' }) {
   return (
     <div style={heroStyle}>
-      <h1 style={titleStyle}>{title}</h1>
+      <div style={textSideStyle}>
+        <h1 style={titleStyle}>{title}</h1>
+        <p style={detailStyle}>{startText}</p>
+        <p style={subtitleStyle}>{text}</p>
+      </div>
       
-      <p style={detailStyle}>{startText}</p>
-      <p style={subtitleStyle}>{text}</p>
-      
-      <div style={avatarWrapper}>
-        <img 
-          src={imageUrl} 
-          alt="Profile" 
-          style={avatarImgStyle} 
-        />
+      <div style={avatarSideStyle}>
+        <div style={avatarWrapper}>
+          <img 
+            src={imageUrl} 
+            alt="Profile" 
+            style={avatarImgStyle} 
+          />
+        </div>
       </div>
     </div>
   );
 }
 
-// --- STYLES  ---
+// --- STYLES ---
 const heroStyle = {
-  textAlign: 'center',
-  padding: 'clamp(24px, 5vh, 44px) clamp(16px, 3vw, 32px)',
+  display: 'flex',
+  flexDirection: 'row',
+  flexWrap: 'wrap-reverse', /* Στα κινητά το κείμενο θα βγει πάνω και η φωτό κάτω */
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  gap: '40px',
+  padding: 'clamp(32px, 6vh, 54px) clamp(20px, 4vw, 48px)',
   width: '100%',
   maxWidth: '980px',
   color: 'var(--text-color)',
   animation: 'fadeIn 0.7s ease-out',
   background: 'var(--surface-color)',
   border: '1px solid var(--border-color)',
-  borderRadius: '22px',
-  boxShadow: 'var(--surface-shadow)',
-  backdropFilter: 'blur(10px)',
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center'
+  borderRadius: '12px',
+  boxShadow: 'var(--surface-shadow)'
+};
+
+const textSideStyle = {
+  flex: '1 1 450px',
+  textAlign: 'left'
+};
+
+const avatarSideStyle = {
+  flex: '0 1 auto',
+  margin: '0 auto'
 };
 
 const titleStyle = {
-  fontSize: 'clamp(2rem, 6.5vw, 3.8rem)',
+  fontSize: 'clamp(2.2rem, 5vw, 3.4rem)',
   fontWeight: '800',
   letterSpacing: '-1px',
-  marginBottom: '15px',
-  lineHeight: 1.08
+  marginBottom: '12px',
+  lineHeight: 1.1,
+  color: 'var(--text-color)'
 };
 
 const detailStyle = {
-  fontSize: 'clamp(1rem, 2.5vw, 1.35rem)',
-  color: 'var(--accent-color)',
-  fontWeight: 700,
-  marginBottom: '10px',
-  lineHeight: '1.3'
+  fontSize: 'clamp(1rem, 2vw, 1.25rem)',
+  color: 'var(--muted-text)',
+  fontWeight: 500,
+  marginBottom: '16px',
+  lineHeight: '1.4'
 };
 
 const subtitleStyle = {
-  fontSize: 'clamp(0.9rem, 2vw, 1.2rem)',
+  fontSize: 'clamp(0.95rem, 1.8vw, 1.1rem)',
   color: 'var(--muted-text)',
-  maxWidth: '600px',
-  margin: '0 auto 40px', 
-  lineHeight: '1.6'
+  maxWidth: '580px',
+  margin: 0, 
+  lineHeight: '1.6',
+  opacity: 0.85
 };
 
 const avatarWrapper = {
-  width: 'clamp(140px, 25vw, 220px)', 
-  height: 'clamp(140px, 25vw, 220px)',
-  borderRadius: '50%',
+  width: 'clamp(160px, 22vw, 240px)', 
+  height: 'clamp(160px, 22vw, 240px)',
+  borderRadius: '12px', /* Τετραγωνισμένη με στρογγυλεμένες άκρες για engineering look */
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  margin: '0 auto', 
-  border: '3px solid var(--accent-color)',
-  boxShadow: 'none', /* Αφαίρεση glow σκιάς */
+  border: '1px solid var(--border-color)',
   overflow: 'hidden'
 };
 

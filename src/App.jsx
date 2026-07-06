@@ -19,28 +19,27 @@ const translations = {
     name:"Άννα Καργαλίδου",
     startText: "Προπτυχιακή φοιτήτρια Μηχανικών Πληροφορικής και Ηλεκτρονικών Συστημάτων",
     welcome: "Καλώς ήρθατε στο βιογραφικό μου!",
-    aboutMeText: "Είμαι φοιτήτρια στο Τμήμα Μηχανικών Πληροφορικής και Ηλεκτρονικών Συστημάτων του Διεθνές Πανεπιστημίου Ελλάδος στη Θεσσαλονίκη, με κατεύθυνση στον Προγραμματισμό και ισχυρή θεωρητική βάση σε Ηλεκτρονικά Συστήματα και Αλγορίθμους. Διαθέτω αποδεδειγμένη εργασιακή ηθική και δεξιότητες εξυπηρέτησης από προηγούμενη απασχόληση, με έμφαση στην ομαδική εργασία και τη γρήγορη προσαρμογή σε νέα περιβάλλοντα. Εστιάζω στην ανάπτυξη λογισμικού και την επίλυση προβλημάτων, με στόχο τη συμβολή σε καινοτόμα έργα που βελτιώνουν την καθημερινή ζωή. Αναζητώ ευκαιρίες για να εφαρμόσω τις γνώσεις μου και να αναπτυχθώ επαγγελματικά στον τομέα της τεχνολογίας.",
+    aboutMeText: "Είμαι φοιτήτρια στο Τμήμα Μηχανικών Πληροφορικής και Ηλεκτρονικών Συστημάτων του Διεθνές Πανεπισστημίου Ελλάδος στη Θεσσαλονίκη, με κατεύθυνση στον Προγραμματισμό και ισχυρή θεωρητική βάση σε Ηλεκτρονικά Συστήματα και Αλγορίθμους. Διαθέτω αποδεδειγμένη εργασιακή ηθική και δεξιότητες εξυπηρέτησης από προηγούμενη απασχόληση, με έμφαση στην ομαδική εργασία και τη γρήγορη προσαρμογή σε νέα περιβάλλοντα. Εστιάζω στην ανάπτυξη λογισμικού και την επίλυση προβλημάτων, με στόχο τη συμβολή σε καινοτόμα έργα που βελτιώνουν την καθημερινή ζωή. Αναζητώ ευκαιρίες για να εφαρμόσω τις γνώσεις μου και να αναπτυχθώ επαγγελματικά στον τομέα της τεχνολογίας.",
     downloadCv: "Λήψη CV",
     educationText1: "Προπτυχιακή Φοιτήτρια",
     educationText2:"Τμήμα Μηχανικών Πληροφορικής και Ηλεκτρονικών Συστημάτων, Διεθνές Πανεπιστήμιο της Ελλάδος (ΔΙΠΑΕ), Θεσσαλονίκη (Σίνδος)",
     educationText3:"Οκτώβριος 2021 - Σήμερα",
     educationText4:"Απόφοιτη του 1ου Γενικού Λυκείου Δράμας",
-    educationText5:"Βαθμός απολυτηρίου: “΄Αριστα” ΔΕΚΑΕΝΝΕΑ κι ΕΞΙ ΔΕΚΑΤΑ (19,6) Διαγωγή: ΕΞΑΙΡΕΤΙΚΗ",
+    educationText5:"Βαθμός απολυτηρίου: “΄Αριστα” (19,6) Διαγωγή: ΕΞΑΙΡΕΤΙΚΗ",
     educationText6:"Σεπτέμβριος 2018 - Ιούνιος 2021",
     certificateText1:"Lower Certificate ECCE",
     certificateText2:"Πιστοποιητικό Γνώσης Χειρισμού Η/Υ:",
-    certificateText3:"• Χρήση Η/Υ και διαχείριση αρχείων Ελληνική έκδοση, Windows 7, Syllabus SYITGR06 • Επεξεργασία κειμένου Ελληνική έκδοση, Microsoft Word 2007, Syllabus SYITGR06 • Υπολογιστικά φύλλα Ελληνική έκδοση, Microsoft Excel 2007, Syllabus SYITGR06 • Βάσεις δεδομένων Ελληνική έκδοση, Microsoft Access 2007, Syllabus SYITGR06 • Παρουσιάσεις Ελληνική έκδοση, Microsoft Power Point 2007, Syllabus SYITGR06 • Υπηρεσίες διαδικτύου Ελληνική έκδοση, MS Internet Explorer, Microsoft Outlook 2007, Syllabus SYITGR06 ",
+    certificateText3:"• Χρήση Η/Υ και διαχείριση αρχείων • Επεξεργασία κειμένου (MS Word) • Υπολογιστικά φύλλα (MS Excel) • Βάσεις δεδομένων (MS Access) • Παρουσιάσεις (MS PowerPoint) • Υπηρεσίες διαδικτύου & Διαχείριση πληροφοριών",
     activitiesText1:"· Υπάλληλος πολλαπλών αρμοδιοτήτων στο Viale Espresso and Convenience Store",
     activitiesText2:"Οκτώβριος 2022 – Ιούνιος 2023",
-    activitiesText3:"· Παρακολούθηση επιμορφοτικού προγράμματος εκπαιδευτικής ρομποτικής ",
+    activitiesText3:"· Παρακολούθηση επιμορφοτικού προγράμματος εκπαιδευτικής ρομποτικής",
     activitiesText4:"2 χρόνια",
-    activitiesText5:"· Προσκοπισμός ",
+    activitiesText5:"· Προσκοπισμός",
     activitiesText6:"3 χρόνια",
     activitiesText7:"· Αποτέλεση καθηκόντων ομαδάρχισας στην κατασκήνωση Tzioni Summer Camp",
     activitiesText8:"1 κατασκηνοτική περίοδο",
     portfolioText: "Υπό κατασκευή",
     contactText: "Μπορείτε να με βρείτε εδώ:",
-    
   },
   en: {
     start: "Home",
@@ -59,11 +58,11 @@ const translations = {
     educationText2: "Department of Information and Electronic Engineering, International Hellenic University, Thessaloniki (Sindos)",
     educationText3: "October 2021 - Present",
     educationText4: "Graduate of the 1st General High School of Drama",
-    educationText5: "Graduation Grade: “Excellent” Nineteen point Six  (19.6) Conduct: Excellent",
+    educationText5: "Graduation Grade: “Excellent” (19.6) Conduct: Excellent",
     educationText6: "September 2018 - June 2021",
     certificateText1: "Lower Certificate ECCE",
     certificateText2: "Computer Skills Certificate:",
-    certificateText3: "• Computer use and file management, Windows 7, Syllabus SYITGR06 • Word processing, Microsoft Word 2007, Syllabus SYITGR06 • Spreadsheets, Microsoft Excel 2007, Syllabus SYITGR06 • Databases, Microsoft Access 2007, Syllabus SYITGR06 • Presentations, Microsoft Power Point 2007, Syllabus SYITGR06 • Internet services, MS Internet Explorer, Microsoft Outlook 2007, Syllabus SYITGR06",
+    certificateText3: "• Computer use and file management • Word processing (MS Word) • Spreadsheets (MS Excel) • Databases (MS Access) • Presentations (MS PowerPoint) • Internet services & Outlook",
     activitiesText1: "· Multi-role employee at Viale Espresso and Convenience Store",
     activitiesText2: "October 2022 - June 2023",
     activitiesText3: "· Attendance of an educational robotics training program",
@@ -170,13 +169,11 @@ function App() {
         {activeTab === 'portfolio' && <Portfolio title={t.portfolio} text={t.portfolioText} />}
         {activeTab === 'contact' && <Contact title={t.contact} text={t.contactText} />}
       </main>
-
     </div>
   );
 }
 
 // --- STYLES ---
-
 const appShellStyle = {
   height: '100vh',
   display: 'flex',
@@ -184,7 +181,6 @@ const appShellStyle = {
   overflow: 'hidden',
   position: 'relative'
 };
-
 
 const navStyle = {
   display: 'flex',
@@ -208,10 +204,10 @@ const linkBtn = {
   border: '1px solid transparent',
   color: 'var(--text-color)',
   cursor: 'pointer',
-  fontWeight: 500,
+  fontWeight: 600,
   padding: '8px 16px',
   fontSize: 'clamp(12px, 1.4vw, 14px)',
-  borderRadius: '6px', /* 6px δίνει πιο "document" αίσθηση παρά "app" */
+  borderRadius: '8px',
   textDecoration: 'none',
   transition: 'all 0.2s ease'
 };
@@ -235,8 +231,8 @@ const langBtn = {
   background: 'var(--surface-color)',
   color: 'var(--text-color)',
   border: '1px solid var(--border-color)',
-  padding: '8px 12px',
-  borderRadius: '999px',
+  padding: '8px 14px',
+  borderRadius: '8px',
   fontWeight: 700,
   boxShadow: 'var(--surface-shadow)'
 };

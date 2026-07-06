@@ -13,46 +13,45 @@ function About_Me({ title, text, downloadLabel, cvFileUrl = '/CV.pdf' }) {
 }
 
 const heroStyle = {
-  textAlign: 'center',
+  textAlign: 'left',
   width: '100%',
   maxWidth: '980px',
   boxSizing: 'border-box',
-  padding: 'clamp(24px, 4vh, 34px) clamp(16px, 3vw, 32px)',
+  padding: 'clamp(32px, 5vh, 44px) clamp(20px, 4vw, 48px)',
   color: 'var(--text-color)',
   background: 'var(--surface-color)',
   border: '1px solid var(--border-color)',
-  borderRadius: '22px',
+  borderRadius: '12px',
   boxShadow: 'var(--surface-shadow)',
-  backdropFilter: 'blur(10px)',
   animation: 'fadeIn 0.7s ease-in'
 };
 
 const titleStyle = {
-  fontSize: 'clamp(1.9rem, 6vw, 3rem)',
+  fontSize: 'clamp(1.8rem, 4vw, 2.6rem)',
   color: 'var(--text-color)',
-  marginBottom: '10px',
+  marginBottom: '20px',
+  fontWeight: 800,
   lineHeight: 1.1
 };
 
 const descriptionStyle = {
-  fontSize: 'clamp(1rem, 2.2vw, 1.15rem)',
+  fontSize: 'clamp(1rem, 2vw, 1.1rem)',
   color: 'var(--muted-text)',
   maxWidth: '900px',
-  margin: '28px auto 0',
-  lineHeight: '1.7'
+  margin: '0 0 28px 0',
+  lineHeight: '1.75'
 };
 
 const downloadBtnStyle = {
   display: 'inline-block',
-  marginTop: '24px',
-  padding: '10px 20px',
-  borderRadius: '6px', /* Πιο τετραγωνισμένο/σοβαρό αντί για 999px */
+  padding: '10px 22px',
+  borderRadius: '8px',
   border: '1px solid var(--accent-color)',
   background: 'var(--accent-color)',
   color: 'var(--accent-contrast)',
   textDecoration: 'none',
   fontWeight: 600,
-  transition: 'background-color 0.2s ease'
+  fontSize: '0.95rem'
 };
 
 export default About_Me;

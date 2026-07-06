@@ -16,40 +16,38 @@ function Contact({ title, text }) {
 }
 
 const heroStyle = {
-  textAlign: 'center',
+  textAlign: 'left',
   width: '100%',
   maxWidth: '980px',
   boxSizing: 'border-box',
-  padding: 'clamp(24px, 4vh, 34px) clamp(16px, 3vw, 32px)',
+  padding: 'clamp(32px, 5vh, 44px) clamp(20px, 4vw, 48px)',
   color: 'var(--text-color)',
   background: 'var(--surface-color)',
   border: '1px solid var(--border-color)',
-  borderRadius: '22px',
+  borderRadius: '12px',
   boxShadow: 'var(--surface-shadow)',
-  backdropFilter: 'blur(10px)',
   animation: 'fadeIn 0.7s ease-in'
 };
 
 const titleStyle = {
-  fontSize: 'clamp(1.9rem, 6vw, 3rem)',
+  fontSize: 'clamp(1.8rem, 4vw, 2.6rem)',
   color: 'var(--text-color)',
-  marginBottom: '10px',
+  marginBottom: '12px',
+  fontWeight: 800,
   lineHeight: 1.1
 };
 
 const descriptionStyle = {
-  fontSize: 'clamp(1rem, 2.2vw, 1.15rem)',
+  fontSize: 'clamp(1rem, 2vw, 1.1rem)',
   color: 'var(--muted-text)',
-  maxWidth: '900px',
-  margin: '28px auto 0',
-  lineHeight: '1.7'
+  margin: '0 0 24px 0',
+  lineHeight: '1.6'
 };
 
 const linksContainer = {
   display: 'flex',
   flexWrap: 'wrap',
-  justifyContent: 'center',
-  gap: '14px',
+  gap: '12px',
   marginTop: '24px'
 };
 
@@ -57,13 +55,12 @@ const linkStyle = {
   textDecoration: 'none',
   color: 'var(--accent-contrast)',
   fontWeight: 600,
-  fontSize: '1rem',
+  fontSize: '0.95rem',
   border: '1px solid var(--accent-color)',
   background: 'var(--accent-color)',
   padding: '10px 20px',
-  borderRadius: '6px', /* Πιο minimal/professional flat look */
-  boxShadow: 'none',
-  transition: 'opacity 0.2s ease'
+  borderRadius: '8px',
+  boxShadow: 'none'
 };
 
 export default Contact;

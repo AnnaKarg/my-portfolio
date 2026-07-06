@@ -1,45 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@500;600;700&display=swap');
 
 :root {
-  --bg-color: #f8fbff;
-  --bg-gradient:
-    radial-gradient(circle at 88% 6%, rgba(14, 165, 233, 0.24), transparent 44%),
-    radial-gradient(circle at 12% 92%, rgba(20, 184, 166, 0.2), transparent 40%),
-    linear-gradient(150deg, #f8fbff 0%, #eef2ff 52%, #effaf9 100%);
-  --text-color: #0b1220;
-  --muted-text: #334155;
-  --nav-bg: rgba(255, 255, 255, 0.66);
-  --surface-color: rgba(255, 255, 255, 0.75);
+  --bg-color: #f8fafc;          
+  --text-color: #0f172a;         
+  --muted-text: #475569;         
+  --nav-bg: rgba(255, 255, 255, 0.85);
+  --surface-color: #ffffff;    
   --surface-strong: #ffffff;
-  --border-color: rgba(15, 23, 42, 0.14);
-  --accent-color: #0ea5e9;
-  --accent-2: #14b8a6;
-  --accent-contrast: #f8fbff;
-  --accent-shadow: rgba(14, 165, 233, 0.36);
-  --surface-shadow: 0 14px 34px rgba(15, 23, 42, 0.12);
-  --bg-orb-1: radial-gradient(circle, rgba(14, 165, 233, 0.92) 0%, rgba(14, 165, 233, 0) 70%);
-  --bg-orb-2: radial-gradient(circle, rgba(20, 184, 166, 0.84) 0%, rgba(20, 184, 166, 0) 70%);
+  --border-color: #cbd5e1;      
+  --accent-color: #1d4ed8;     
+  --accent-2: #1d4ed8;
+  --accent-contrast: #ffffff;
+  --surface-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
 }
 
 [data-theme='dark'] {
-  --bg-color: #071225;
-  --bg-gradient:
-    radial-gradient(circle at 88% 12%, rgba(14, 165, 233, 0.26), transparent 42%),
-    radial-gradient(circle at 12% 92%, rgba(20, 184, 166, 0.2), transparent 38%),
-    linear-gradient(160deg, #071225 0%, #0b1730 48%, #071a26 100%);
-  --text-color: #e2ecff;
-  --muted-text: #9fb0c8;
-  --nav-bg: rgba(4, 10, 20, 0.74);
-  --surface-color: rgba(8, 18, 34, 0.7);
-  --surface-strong: rgba(9, 21, 40, 0.88);
-  --border-color: rgba(154, 176, 209, 0.22);
-  --accent-color: #38bdf8;
-  --accent-2: #2dd4bf;
-  --accent-contrast: #061321;
-  --accent-shadow: rgba(56, 189, 248, 0.22);
-  --surface-shadow: 0 16px 34px rgba(2, 6, 23, 0.45);
-  --bg-orb-1: radial-gradient(circle, rgba(56, 189, 248, 0.88) 0%, rgba(56, 189, 248, 0) 70%);
-  --bg-orb-2: radial-gradient(circle, rgba(45, 212, 191, 0.8) 0%, rgba(45, 212, 191, 0) 70%);
+  --bg-color: #0b1329;         
+  --text-color: #f8fafc;        
+  --muted-text: #94a3b8;        
+  --nav-bg: rgba(11, 19, 41, 0.85);
+  --surface-color: #1c2541;     
+  --surface-strong: #0b1329;
+  --border-color: #334155;      
+  --accent-color: #38bdf8;       
+  --accent-2: #38bdf8;
+  --accent-contrast: #0b1329;
+  --surface-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
 }
 
 * {
@@ -55,8 +41,9 @@ body,
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--bg-color); 
-  background-image: none !important;
+  background-color: var(--bg-color);
+  background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
+  background-size: 24px 24px;
   color: var(--text-color);
   font-family: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -71,12 +58,13 @@ h3 {
 
 a,
 button {
-  transition: transform 0.22s ease, box-shadow 0.22s ease, opacity 0.22s ease, background-color 0.22s ease, color 0.22s ease, border-color 0.22s ease;
+  transition: all 0.2s ease;
 }
 
 button:hover,
 a:hover {
   transform: translateY(-1px);
+  opacity: 0.95;
 }
 
 @keyframes fadeIn {
@@ -84,7 +72,6 @@ a:hover {
     opacity: 0;
     transform: translateY(12px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);

@@ -14,7 +14,7 @@ function Certificate({ title, certificateText1, certificateText2, certificateTex
         <ul style={headListStyle}>
           {certificateText1 && (
             <li style={headListItemStyle}>
-              <span style={triangleStyle} aria-hidden="true">▸</span>
+              <span style={triangleStyle} aria-hidden="true">■</span>
               <span>{certificateText1}</span>
             </li>
           )}
@@ -22,14 +22,14 @@ function Certificate({ title, certificateText1, certificateText2, certificateTex
           {certificateText2 && (
             <li style={headListItemStyleWithChildren}>
               <div style={headItemRowStyle}>
-                <span style={triangleStyle} aria-hidden="true">▸</span>
+                <span style={triangleStyle} aria-hidden="true">■</span>
                 <span>{certificateText2}</span>
               </div>
 
               <ul style={subListStyle}>
                 {certificateItems.map((item, index) => (
                   <li key={`${item}-${index}`} style={subListItemStyle}>
-                    <span style={subTriangleStyle} aria-hidden="true">▹</span>
+                    <span style={subTriangleStyle} aria-hidden="true">↳</span>
                     <span>{item}</span>
                   </li>
                 ))}
@@ -43,32 +43,30 @@ function Certificate({ title, certificateText1, certificateText2, certificateTex
 }
 
 const containerStyle = {
-  textAlign: 'center',
   width: '100%',
   maxWidth: '980px',
   boxSizing: 'border-box',
-  padding: 'clamp(24px, 4vh, 34px) clamp(16px, 3vw, 32px)',
+  padding: 'clamp(32px, 5vh, 44px) clamp(20px, 4vw, 48px)',
   color: 'var(--text-color)',
   background: 'var(--surface-color)',
   border: '1px solid var(--border-color)',
-  borderRadius: '22px',
+  borderRadius: '12px',
   boxShadow: 'var(--surface-shadow)',
-  backdropFilter: 'blur(10px)',
   animation: 'fadeIn 0.7s ease-in'
 };
 
 const titleStyle = {
-  fontSize: 'clamp(1.9rem, 6vw, 3rem)',
+  fontSize: 'clamp(1.8rem, 4vw, 2.6rem)',
   color: 'var(--text-color)',
   marginBottom: '10px',
-  lineHeight: 1.1
+  fontWeight: 800,
+  textAlign: 'left'
 };
 
 const contentStyle = {
-  maxWidth: '900px',
-  margin: '28px auto 0',
+  margin: '20px 0 0 0',
   borderTop: '1px solid var(--border-color)',
-  paddingTop: '14px',
+  paddingTop: '20px',
   textAlign: 'left'
 };
 
@@ -77,14 +75,14 @@ const headListStyle = {
   padding: 0,
   listStyle: 'none',
   display: 'grid',
-  gap: '12px'
+  gap: '16px'
 };
 
 const headListItemStyle = {
   display: 'flex',
-  alignItems: 'center',
-  gap: '10px',
-  fontSize: 'clamp(1.05rem, 2.3vw, 1.2rem)',
+  alignItems: 'baseline',
+  gap: '12px',
+  fontSize: '1.2rem',
   fontWeight: 700,
   color: 'var(--text-color)'
 };
@@ -96,40 +94,39 @@ const headListItemStyleWithChildren = {
 
 const headItemRowStyle = {
   display: 'flex',
-  alignItems: 'center',
-  gap: '10px',
-  fontSize: 'clamp(1.05rem, 2.3vw, 1.2rem)',
+  alignItems: 'baseline',
+  gap: '12px',
+  fontSize: '1.2rem',
   fontWeight: 700,
   color: 'var(--text-color)'
 };
 
 const triangleStyle = {
   color: 'var(--accent-color)',
-  fontSize: '1.05rem',
-  lineHeight: 1
+  fontSize: '0.8rem',
 };
 
 const subListStyle = {
-  margin: '2px 0 0',
-  paddingLeft: '30px',
+  margin: '4px 0 0',
+  paddingLeft: '24px',
   listStyle: 'none',
   display: 'grid',
-  gap: '8px'
+  gap: '10px'
 };
 
 const subListItemStyle = {
   display: 'flex',
   alignItems: 'flex-start',
   gap: '10px',
-  fontSize: 'clamp(1rem, 2.2vw, 1.1rem)',
-  lineHeight: '1.55',
+  fontSize: '1rem',
+  lineHeight: '1.5',
   color: 'var(--muted-text)'
 };
 
 const subTriangleStyle = {
-  color: 'var(--accent-2)',
-  fontSize: '0.95rem',
-  lineHeight: 1.4
+  color: 'var(--border-color)',
+  fontWeight: 'bold',
+  fontSize: '1rem',
 };
 
 export default Certificate;

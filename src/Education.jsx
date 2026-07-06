@@ -33,25 +33,24 @@ function Education({
 }
 
 const containerStyle = {
-  textAlign: 'center',
   width: '100%',
   maxWidth: '980px',
   boxSizing: 'border-box',
-  padding: 'clamp(24px, 4vh, 34px) clamp(16px, 3vw, 32px)',
+  padding: 'clamp(32px, 5vh, 44px) clamp(20px, 4vw, 48px)',
   color: 'var(--text-color)',
   background: 'var(--surface-color)',
   border: '1px solid var(--border-color)',
-  borderRadius: '22px',
+  borderRadius: '12px',
   boxShadow: 'var(--surface-shadow)',
-  backdropFilter: 'blur(10px)',
   animation: 'fadeIn 0.7s ease-in'
 };
 
 const titleStyle = {
-  fontSize: 'clamp(1.9rem, 6vw, 3rem)',
+  fontSize: 'clamp(1.8rem, 4vw, 2.6rem)',
   color: 'var(--text-color)',
   marginBottom: '10px',
-  lineHeight: 1.1
+  fontWeight: 800,
+  textAlign: 'left'
 };
 
 const entryStyle = {
@@ -59,29 +58,28 @@ const entryStyle = {
   justifyContent: 'space-between',
   alignItems: 'flex-start',
   gap: '24px',
-  maxWidth: '900px',
-  margin: '28px auto 0',
+  margin: '28px 0 0 0',
   borderBottom: '1px solid var(--border-color)',
-  paddingBottom: '14px',
-  flexWrap: 'wrap'
+  paddingBottom: '20px',
+  flexWrap: 'wrap-reverse',
+  textAlign: 'left'
 };
 
 const leftColumnStyle = {
   flex: '1 1 520px',
-  minWidth: '280px',
-  textAlign: 'left'
+  minWidth: '280px'
 };
 
 const entryTitleStyle = {
-  margin: '0 0 6px',
-  fontSize: '1.55rem',
+  margin: '0 0 8px 0',
+  fontSize: '1.35rem',
   fontWeight: 700
 };
 
 const entryTextStyle = {
   margin: 0,
-  fontSize: 'clamp(1rem, 2.2vw, 1.1rem)',
-  lineHeight: '1.7',
+  fontSize: 'clamp(0.95rem, 2vw, 1.05rem)',
+  lineHeight: '1.65',
   color: 'var(--muted-text)',
   whiteSpace: 'pre-line'
 };
@@ -89,10 +87,10 @@ const entryTextStyle = {
 const dateStyle = {
   margin: 0,
   flex: '0 0 auto',
-  fontSize: 'clamp(0.95rem, 2vw, 1.05rem)',
+  fontSize: '0.95rem',
   color: 'var(--accent-color)',
   whiteSpace: 'nowrap',
-  fontWeight: 700
+  fontWeight: 600
 };
 
 export default Education;
