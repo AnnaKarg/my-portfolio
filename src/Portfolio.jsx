@@ -1,6 +1,13 @@
 import React from 'react';
 
 function Portfolio({ title }) {
+  const skills = [
+    { cat: "Languages", items: ["JavaScript", "Python", "Java", "HTML5", "CSS3", "SQL"] },
+    { cat: "Frontend", items: ["React.js", "Tailwind CSS", "Responsive Design"] },
+    { cat: "Backend & DBs", items: ["FastAPI", "REST APIs", "PHP", "PostgreSQL", "MySQL"] },
+    { cat: "AI & Tools", items: ["LangGraph", "LangChain", "Docker", "Git", "GitHub"] }
+  ];
+
   // Παίρνουμε τα δεδομένα απευθείας από το επίσημο CV σου
   const projects = [
     {
@@ -36,6 +43,21 @@ function Portfolio({ title }) {
   return (
     <div style={containerStyle}>
       <h1 style={titleStyle}>{title}</h1>
+
+      <div style={techStackWrapStyle}>
+        <h2 style={techStackHeadingStyle}>Tech Stack</h2>
+        {skills.map((group, i) => (
+          <div key={i} style={techCategoryStyle}>
+            <span style={techCatLabelStyle}>{group.cat}</span>
+            <div style={pillRowStyle}>
+              {group.items.map((item, j) => (
+                <span key={j} style={pillStyle}>{item}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
       <div style={gridStyle}>
         {projects.map((proj, index) => (
           <div key={index} style={cardStyle}>
@@ -80,6 +102,54 @@ const gridStyle = {
   display: 'grid',
   gap: '20px',
   textAlign: 'left'
+};
+
+const techStackWrapStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '16px',
+  marginBottom: '32px',
+  paddingBottom: '28px',
+  borderBottom: '1px solid var(--border-color)'
+};
+
+const techStackHeadingStyle = {
+  margin: 0,
+  fontSize: '0.9rem',
+  fontWeight: 800,
+  letterSpacing: '0.05em',
+  textTransform: 'uppercase',
+  color: 'var(--muted-text)'
+};
+
+const techCategoryStyle = {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '8px'
+};
+
+const techCatLabelStyle = {
+  fontSize: '0.75rem',
+  fontWeight: 700,
+  letterSpacing: '0.05em',
+  textTransform: 'uppercase',
+  color: 'var(--accent-color)'
+};
+
+const pillRowStyle = {
+  display: 'flex',
+  flexWrap: 'wrap',
+  gap: '8px'
+};
+
+const pillStyle = {
+  fontSize: '0.85rem',
+  fontWeight: 600,
+  padding: '5px 14px',
+  borderRadius: '999px',
+  background: 'transparent',
+  border: '1px solid var(--border-color)',
+  color: 'var(--text-color)'
 };
 
 const cardStyle = {
